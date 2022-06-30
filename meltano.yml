@@ -1,6 +1,14 @@
 version: 1
 default_environment: dev
 project_id: 25d3da27-89b3-474d-9ef3-d8f1fa0e9797
+plugins:
+  extractors:
+  - name: tap-google-sheets
+    variant: meltano
+    pip_url: git+https://github.com/Matatika/tap-google-sheets@v0.1.0
+  files:
+  - name: dbt
+    pip_url: git+https://github.com/Matatika/files-dbt@v1.0.x.0
 environments:
 - name: dev
 - name: staging
