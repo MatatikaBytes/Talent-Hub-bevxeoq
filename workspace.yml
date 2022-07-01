@@ -1,5 +1,6 @@
 version: workspaces/v0.1
 name: Talent Hub
+image_url: https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/themes/2148841777/settings_images/WLiLK9phSPu1uRKrB8J1_DTN_Favicon.png?v=2
 dataset_paths:
 - analyze/datasets
 - .meltano/analyze/datasets
