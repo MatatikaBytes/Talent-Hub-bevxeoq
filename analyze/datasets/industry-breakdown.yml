@@ -1,0 +1,39 @@
+version: datasets/v0.2
+source: analyze/channels/DTN
+title: Industry sector breakdown
+questions: What is the number of profiles in each industry sector?
+description: |-
+  Number of profiles in each industry sector.
+
+  #DTN-Analytics
+metadata: |-
+  {
+    "name": "dtn_network_tech",
+    "label": "Profiles by industry", 
+    "related_table": {
+      "columns": [
+        {"name": "industry", "label": "Industry", "description": "Industry"}
+      ],
+      "aggregates": [
+        {"name": "total_profile", "label": "Total Profiles", "description": "Total Profiles"}
+      ]
+    }
+  }
+visualisation: |-
+  {"chartjs-chart": 
+    {"chartType": "bar", 
+      "options": {
+        "scales": {
+          "y": {
+            "beginAtZero": true
+          }
+        }
+      }
+    }
+  }
+query: |-
+  select 
+  industry__sector_ "dtn_network_tech.industry",
+  count(*) "dtn_network_tech.total_profile" 
+  from dtn_network_tech dnt
+  group by industry__sector_;
